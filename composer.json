@@ -1,0 +1,43 @@
+{
+    "name": "threebyfive/craft-entry-type-sources",
+    "description": "Test",
+    "type": "craft-plugin",
+    "version": "0.0.1",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "craft entry type sources"
+    ],
+    "support": {
+        "docs": "https://github.com/kartoteket/craft-entry-type-sources/blob/master/README.md",
+        "issues": "https://github.com/kartoteket/craft-entry-type-sources/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Svale",
+            "homepage": "http://kartoteket.as/"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "threebyfive\\craftentrytypesources\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Craft Entry Type Sources",
+        "handle": "craft-entry-type-sources",
+        "hasCpSettings": true,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/kartoteket/craft-entry-type-sources/master/CHANGELOG.md",
+        "components": {
+            "entryTypeSources": "threebyfive\\craftentrytypesources\\services\\EntryTypeSources"
+        },
+        "class": "threebyfive\\craftentrytypesources\\CraftEntryTypeSources"
+    }
+}

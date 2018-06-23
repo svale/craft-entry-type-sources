@@ -11,8 +11,8 @@
         "craft entry type sources"
     ],
     "support": {
-        "docs": "https://github.com/kartoteket/craft-entry-type-sources/blob/master/README.md",
-        "issues": "https://github.com/kartoteket/craft-entry-type-sources/issues"
+        "docs": "https://github.com/svale/craft-entry-type-sources/blob/master/README.md",
+        "issues": "https://github.com/svale/craft-entry-type-sources/issues"
     },
     "license": "MIT",
     "authors": [
@@ -34,7 +34,7 @@
         "handle": "craft-entry-type-sources",
         "hasCpSettings": true,
         "hasCpSection": false,
-        "changelogUrl": "https://raw.githubusercontent.com/kartoteket/craft-entry-type-sources/master/CHANGELOG.md",
+        "changelogUrl": "https://raw.githubusercontent.com/svale/craft-entry-type-sources/master/CHANGELOG.md",
         "components": {
             "entryTypeSources": "threebyfive\\craftentrytypesources\\services\\EntryTypeSources"
         },

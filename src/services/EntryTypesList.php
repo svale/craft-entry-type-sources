@@ -66,11 +66,12 @@ class EntryTypesList extends Component
 
                         $result[] = [
                             'key'      => 'section:' . $section->id.'-'.$entryType->id,
-                            'label'    => $section->name . ': ' . $entryType->name,
+                            'label'    => $entryType->name,
                             'sites'    => [1],
                             'data'     => [
                                 'type' => $section->type,
-                                'handle' => $section->handle
+                                'handle' => $section->handle,
+                                'entry-type' => $entryType->handle
                             ],
                             'criteria' => [
                                 'sectionId' => $section->id,
@@ -107,8 +108,7 @@ class EntryTypesList extends Component
             }
         }
 
-        // Replace original Singles link with new singles list
-        // print_r($result);
+        // Replace original sections list with new types list
         array_splice($event->sources, 3, 1, $result);
         // unset($event->sources[5]);
 // print_r($event->sources); die();

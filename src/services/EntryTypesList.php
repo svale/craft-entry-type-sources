@@ -67,7 +67,7 @@ class EntryTypesList extends Component
                         $result[] = [
                             'key'      => 'section:' . $section->id.'-'.$entryType->id,
                             'label'    => $entryType->name,
-                            'sites'    => [1],
+                            // 'sites'    => [1],  // Optional, see: https://docs.craftcms.com/api/v3/craft-base-elementinterface.html#public-methods
                             'data'     => [
                                 'type' => $section->type,
                                 'handle' => $section->handle,
@@ -75,7 +75,7 @@ class EntryTypesList extends Component
                             ],
                             'criteria' => [
                                 'sectionId' => $section->id,
-                                'editable' => 1,
+                                'editable' => 1, // @todo: inherit this from section/$event->source ??!?
                                 'type' => $entryType->handle
                             ],
                         ];
@@ -108,13 +108,18 @@ class EntryTypesList extends Component
             }
         }
 
-        // Replace original sections list with new types list
-        array_splice($event->sources, 3, 1, $result);
-        // unset($event->sources[5]);
-// print_r($event->sources); die();
+        // @todo: set expand or replace as settings option
+        // Expand as nested
+        $event->sources[3]['nested'] = $result;
 
+        // Replace original sections list with new types list. @todo: If replce, 
+        // array_splice($event->sources, 3, 1, $result);
+
+        // BEDBUG
+        // unset($event->sources[5]);
+        // print_r($event->sources); die();
         // $event->sources = [];
-// die();
+        // die();
 
         // Check our Plugin's settings for `someAttribute`
         // if (CraftEntryTypeSources::$plugin->getSettings()->someAttribute) {
